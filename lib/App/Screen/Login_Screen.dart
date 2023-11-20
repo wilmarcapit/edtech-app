@@ -1,3 +1,5 @@
+import 'package:edtech_app/App/Screen/Dashboard_Screen.dart';
+import 'package:edtech_app/App/Screen/Signup_Screen.dart';
 import 'package:edtech_app/App/Widgets/customText_Field.dart';
 import 'package:edtech_app/App/Widgets/hex_color.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+  static const routeName = '/login';
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -26,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: Alignment.center,
             child: Container(
               height: screenHeight * .4,
-              width: screenWidth * .7,
+              width: screenWidth * .8,
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(22),
@@ -68,7 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 15,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                      },
                       child: Text(
                         'Sign Up?',
                         style: GoogleFonts.poppins(
@@ -98,7 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       onPressed: () {
-                        // Navigator.of(context).pushNamed(NavScreen.routeName);
+                        Navigator.of(context)
+                            .pushNamed(DashBoardScreen.routeName);
                       },
                       //_showOtpDialog(emailController.text);
 
